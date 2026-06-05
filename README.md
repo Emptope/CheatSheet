@@ -1,4 +1,4 @@
-## Cheat Sheet Template
+## CheatSheet Template
 
 This is a modified version based on https://github.com/Milvoid/CheatingSheetTemplate
 
