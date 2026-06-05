@@ -1,0 +1,121 @@
+% !TEX program = xelatex
+% This xelatex template is made by Milvoid
+% ALL THE CONTENTS ARE MADE BY Yao Tuo (Emptope)
+% Copyleft 2026 Yao Tuo (Emptope), All wrongs reversed.
+
+\documentclass[a4paper]{article}
+
+\input{config/packages.tex}
+\input{config/fonts_setup.tex}
+\input{config/page_style.tex}
+
+\begin{document}
+\begin{cheatsheet}
+
+\section{这是大标题}
+
+\divider
+
+\section{这也是大标题}
+
+\subsection{这是小标题}
+
+更小的标题可以通过 \verb|\bluebf{}| 来强调：
+
+\bluebf{这是更小的标题}
+
+\divider
+
+\subsection{公式示例}
+
+行内公式：\m{\mathrm{e}^{i \pi} + 1 = 0}
+
+行间公式：$$\mathrm{e}^{i \pi} + 1 = 0$$
+
+\vspace{0.5em}
+
+\subsection{插入图片示例}
+
+单幅图片：
+
+{\centering
+ \includegraphics[height=1cm, width=0.3\linewidth]{fig/1.png}\par
+}
+
+多幅图片：
+
+{\centering
+ \includegraphics[height=1cm, width=0.3\linewidth]{fig/2.png}
+ \includegraphics[height=1cm, width=0.3\linewidth]{fig/3.png}\par
+}
+
+\vspace{0.5em}
+
+\divider
+
+以下是一段示例文本
+
+\vspace{0.5em}
+
+\subsection{辐射传热计算}
+
+\bluebf{封闭系统的辐射传热}
+
+\vspace{0.5em}
+
+透热介质：不参与热辐射的介质
+
+\vspace{0.5em}
+
+两黑体表面组成的封闭腔
+\begin{align*}
+  \Phi_{1, 2} &= A_1 E_{b1} X_{1, 2} - A_2 E_{b2} X_{2, 1} \\ 
+  &= A_1 X_{1, 2} (E_{b1} - E_{b2}) = A_2 X_{2, 1} (E_{b1} - E_{b2}) \\
+  &= \frac{E_{b1} - E_{b2}}{1/ A_1 X_{1, 2}}
+\end{align*}
+
+有效辐射：单位时间离开单位表面积的总辐射能，包括自身辐射和反射辐射
+$$J_1 = E_1 + \rho_1 G_1 = \varepsilon_1 E_{b1} + (1 - \alpha_1) G_1$$
+对同一表面，向外放热为正值
+$$q = J_1 - G_1 = E_1 - \alpha_1 G_1$$
+可得有效辐射 \m{J} 与表面净辐射换热量 \m{q} 之间的关系：
+$$J = \frac{E}{\alpha} - \frac{1 - \alpha}{\alpha} q = E_b - \left(\frac{1}{\varepsilon} - 1\right) q$$
+
+\vspace{0.5em}
+
+两漫灰表面组成的封闭腔
+
+一般的情形：
+$$\Phi_{1, 2} = \frac{E_{b1} - E_{b2}}{\frac{1 - \varepsilon_1}{\varepsilon_1 A_1} + \frac{1}{A_1 X_{1, 2}} + \frac{1 - \varepsilon_2}{\varepsilon_2 A_2}} = \varepsilon_s A_1 X_{1, 2} (E_{b1} - E_{b2})$$
+$$\varepsilon_s = \frac{1}{1 + X_{1, 2} \left(\frac{1}{\varepsilon_1} - 1\right) + X_{2, 1} \left(\frac{1}{\varepsilon_2} - 1 \right)}$$
+\m{\varepsilon_s} 为系统发射率，是考虑由于灰体系统多次吸收与反射对换热量影响的因子，\m{\varepsilon_s < 1}；\m{\frac{1 - \varepsilon}{\varepsilon}} 为表面辐射热阻，\m{\frac{1}{A X}} 为空间辐射热阻
+
+\vspace{0.5em}
+
+一般情形的简化：
+
+\vspace{0.5em}
+
+{\centering
+ \includegraphics[height=1cm, width=0.3\linewidth]{fig/1.png}
+ \includegraphics[height=1cm, width=0.3\linewidth]{fig/2.png}
+ \includegraphics[height=1cm, width=0.3\linewidth]{fig/3.png}\par
+}
+
+\vspace{0.5em}
+
+1. 表面 1 为非凹面，\m{X_{1, 1} = 0}，\m{X_{1, 2} = 1}
+$$\Phi_{1, 2} = \frac{A_1(E_{b1} - E_{b2})}{\frac{1}{\varepsilon_1} + \frac{A_1}{A_2} \left( \frac{1}{\varepsilon_2} - 1 \right)}$$
+
+2. \m{X_{1, 2} = 1}，表面积 \m{A_1 \approx A_2} 且无限靠近
+$$\Phi_{1, 2} = \frac{A_1(E_{b1} - E_{b2})}{\frac{1}{\varepsilon_1} + \frac{1}{\varepsilon_2} - 1}$$
+
+3. \m{X_{1, 2} = 1}，表面积 \m{A_1 \ll A_2}
+$$\Phi_{1, 2} = \varepsilon_1 A_1 (E_{b1} - E_{b2})$$
+
+\vspace{0.5em}
+
+(原谅这里公式字母表达不规范，毕竟是 Cheat Sheet，手敲 \LaTeX)
+
+\end{cheatsheet}
+\end{document}

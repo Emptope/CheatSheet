@@ -1,0 +1,86 @@
+% Fonts
+\defaultfontfeatures{Ligatures=TeX}
+\newcommand{\CheatFontPath}{fonts/}
+\IfFileExists{fonts/SFCompactText-Regular.ttf}{}
+  {\renewcommand{\CheatFontPath}{CheatSheetTemplate/fonts/}}
+
+\defaultfontfeatures[SFCompactText-Regular.ttf, SFCompactText-Bold.ttf, SFCompactText-Italic.ttf, SFCompactText-BoldItalic.ttf, SFCompactText-SemiBold.ttf, SFCompactText-SemiBlack.ttf, PingFangSC-Regular.ttf, PingFangSC-SemiBold.ttf, PingFangSC-SemiBlack.ttf]{Path=\CheatFontPath}
+
+% English fonts
+\setmainfont{SFCompactText-Regular.ttf}[
+  BoldFont=SFCompactText-Bold.ttf,
+  ItalicFont=SFCompactText-Italic.ttf,
+  BoldItalicFont=SFCompactText-BoldItalic.ttf
+]
+\setsansfont{SFCompactText-Regular.ttf}[
+  BoldFont=SFCompactText-Bold.ttf,
+  ItalicFont=SFCompactText-Italic.ttf,
+  BoldItalicFont=SFCompactText-BoldItalic.ttf
+]
+\setmonofont{SFCompactText-Regular.ttf}[
+  BoldFont=SFCompactText-Bold.ttf,
+  ItalicFont=SFCompactText-Italic.ttf,
+  BoldItalicFont=SFCompactText-BoldItalic.ttf
+]
+
+% Chinese fonts
+\setCJKmainfont{PingFangSC-Regular.ttf}[
+  BoldFont=PingFangSC-SemiBold.ttf,
+  ItalicFont=PingFangSC-Regular.ttf
+]
+\setCJKsansfont{PingFangSC-Regular.ttf}[
+  BoldFont=PingFangSC-SemiBold.ttf,
+  ItalicFont=PingFangSC-Regular.ttf
+]
+\setCJKmonofont{PingFangSC-Regular.ttf}[
+  BoldFont=PingFangSC-SemiBold.ttf,
+  ItalicFont=PingFangSC-Regular.ttf
+]
+
+\newfontfamily\CheatLatinSemiBold{SFCompactText-SemiBold.ttf}
+\newfontfamily\CheatLatinSemiBlack{SFCompactText-SemiBlack.ttf}
+\newCJKfontfamily\CheatCJKSemiBold{PingFangSC-SemiBold.ttf}
+\newCJKfontfamily\CheatCJKSemiBlack{PingFangSC-SemiBlack.ttf}
+
+\xeCJKsetup{
+  CJKmath=true,
+  CheckSingle=true,
+  PunctStyle=kaiming
+}
+
+% Math fonts configuration
+\DeclareFontFamily{OT1}{CheatMathRoman}{}
+\DeclareFontShape{OT1}{CheatMathRoman}{m}{n}{<-> cmr10}{}
+\DeclareFontFamily{OML}{CheatMathItalic}{\skewchar\font=127}
+\DeclareFontShape{OML}{CheatMathItalic}{m}{it}{<-> cmmi10}{}
+\DeclareFontFamily{OMS}{CheatMathSymbol}{\skewchar\font=48}
+\DeclareFontShape{OMS}{CheatMathSymbol}{m}{n}{<-> cmsy10}{}
+\DeclareFontFamily{OMX}{CheatMathLargeSymbol}{}
+\DeclareFontShape{OMX}{CheatMathLargeSymbol}{m}{n}{<-> cmex10}{}
+\SetSymbolFont{operators}{normal}{OT1}{CheatMathRoman}{m}{n}
+\SetSymbolFont{letters}{normal}{OML}{CheatMathItalic}{m}{it}
+\SetSymbolFont{symbols}{normal}{OMS}{CheatMathSymbol}{m}{n}
+\SetSymbolFont{largesymbols}{normal}{OMX}{CheatMathLargeSymbol}{m}{n}
+
+\DeclareMathSizes{5}{5}{4}{3}
+\newcommand{\CheatInlineMathSize}{5.4}
+\newcommand{\CheatInlineMathScriptSize}{4.2}
+\newcommand{\CheatInlineMathScriptScriptSize}{3.3}
+\DeclareMathSizes
+  {\CheatInlineMathSize}
+  {\CheatInlineMathSize}
+  {\CheatInlineMathScriptSize}
+  {\CheatInlineMathScriptScriptSize}
+
+\newcommand{\CheatInlineMathFont}{%
+  \fontsize{\CheatInlineMathSize pt}{6pt}\selectfont
+}
+\everymath\expandafter{\expandafter\CheatInlineMathFont\the\everymath}
+
+\thinmuskip=3mu
+\medmuskip=4mu plus 2mu minus 4mu
+\thickmuskip=5mu plus 5mu
+
+\newcommand{\m}[1]{{\CheatInlineMathFont\(#1\)}}
+\newcommand{\tightmath}[1]{\m{#1}}
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}

@@ -1,0 +1,28 @@
+\RequirePackage{fix-cm}
+
+\usepackage{iftex}
+\ifXeTeX
+\else
+  \errmessage{CheatSheet.tex must be compiled with XeLaTeX}
+\fi
+
+\usepackage[
+  a4paper,
+  left=0.10cm,
+  right=0.10cm,
+  top=0.10cm,
+  bottom=0.25cm,
+  noheadfoot
+]{geometry}
+\usepackage[no-math]{fontspec}
+\usepackage{xeCJK}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
