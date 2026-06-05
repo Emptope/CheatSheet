@@ -1,0 +1,23 @@
+% Document-level commands and environments
+\newenvironment{cheatsheet}
+  {\begin{multicols*}{4}\raggedcolumns\normalsize}
+  {\end{multicols*}}
+
+\newcommand{\bluebf}[1]{\textcolor{CheatTitleBlue}{\textbf{#1}}}
+\newcommand{\term}[1]{\textbf{#1}}
+\newcommand{\accenttext}[1]{{\color{CheatAccentBlue}#1}}
+
+\newcommand{\pointtitle}[1]{{\color{CheatAccentBlue}\CheatLatinSemiBlack\CheatCJKSemiBlack #1}}
+\newcommand{\pt}[1]{\pointtitle{#1}}
+\newcommand{\paragraphtitle}[1]{\pointtitle{#1}}
+\newcommand{\bullettitle}[1]{\pointtitle{#1}}
+
+\newcommand{\divider}{%
+  \par\vspace{1pt}%
+  {\color{CheatDividerGray}\hrule height 0.5pt width \linewidth}%
+  \vspace{1pt}%
+}
+
+\newcommand{\m}[1]{{\CheatInlineMathFont\(#1\)}}
+\newcommand{\tightmath}[1]{\m{#1}}
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}

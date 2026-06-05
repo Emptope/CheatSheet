@@ -1,4 +1,31 @@
-% Font path
+% Package loading
+\usepackage{iftex}
+\ifXeTeX
+\else
+  \errmessage{CheatSheet.tex must be compiled with XeLaTeX}
+\fi
+
+\usepackage[
+  a4paper,
+  left=0.10cm,
+  right=0.10cm,
+  top=0.10cm,
+  bottom=0.25cm,
+  noheadfoot
+]{geometry}
+\usepackage[no-math]{fontspec}
+\usepackage{xeCJK}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+
+% Font setup
 \newcommand{\CheatFontPath}{fonts/}
 \IfFileExists{fonts/SFCompactText-Regular.ttf}{}
   {\renewcommand{\CheatFontPath}{CheatSheetTemplate/fonts/}}
@@ -20,30 +47,26 @@
   PingFangSC-SemiBold.ttf, PingFangSC-SemiBlack.ttf
 ]{Path=\CheatFontPath}
 
-% English fonts
 \setmainfont{SFCompactText-Regular.ttf}
 \setsansfont{SFCompactText-Regular.ttf}
 \setmonofont{SFCompactText-Regular.ttf}
 
-% Chinese fonts
 \setCJKmainfont{PingFangSC-Regular.ttf}
 \setCJKsansfont{PingFangSC-Regular.ttf}
 \setCJKmonofont{PingFangSC-Regular.ttf}
 
-% Custom font families
 \newfontfamily\CheatLatinSemiBold{SFCompactText-SemiBold.ttf}
 \newfontfamily\CheatLatinSemiBlack{SFCompactText-SemiBlack.ttf}
 \newCJKfontfamily\CheatCJKSemiBold{PingFangSC-SemiBold.ttf}
 \newCJKfontfamily\CheatCJKSemiBlack{PingFangSC-SemiBlack.ttf}
 
-% xeCJK configuration
 \xeCJKsetup{
   CJKmath=true,
   CheckSingle=true,
   PunctStyle=kaiming
 }
 
-% Math fonts configuration
+% Math font setup
 \DeclareFontFamily{OT1}{CheatMathRoman}{}
 \DeclareFontShape{OT1}{CheatMathRoman}{m}{n}{<-> cmr10}{}
 \DeclareFontFamily{OML}{CheatMathItalic}{\skewchar\font=127}
@@ -58,28 +81,85 @@
 \SetSymbolFont{symbols}{normal}{OMS}{CheatMathSymbol}{m}{n}
 \SetSymbolFont{largesymbols}{normal}{OMX}{CheatMathLargeSymbol}{m}{n}
 
-% Math sizes
 \newcommand{\CheatInlineMathSize}{5}
 \newcommand{\CheatInlineMathScriptSize}{4.2}
 \newcommand{\CheatInlineMathScriptScriptSize}{3.3}
 \DeclareMathSizes
-  {\CheatInlineMathSize}
+  {5} % must be the same as text size
   {\CheatInlineMathSize}
   {\CheatInlineMathScriptSize}
   {\CheatInlineMathScriptScriptSize}
 
-% Inline math font configuration
 \newcommand{\CheatInlineMathFont}{%
   \fontsize{\CheatInlineMathSize pt}{6pt}\selectfont
 }
 \everymath\expandafter{\expandafter\CheatInlineMathFont\the\everymath}
 
-% Math spacing
 \thinmuskip=3mu
 \medmuskip=4mu plus 2mu minus 4mu
 \thickmuskip=5mu plus 5mu
 
-% Custom math commands
-\newcommand{\m}[1]{{\CheatInlineMathFont\(#1\)}}
-\newcommand{\tightmath}[1]{\m{#1}}
-\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+% Page and column setup
+\newlength{\CheatColumnWidth}
+\newlength{\CheatColumnSep}
+\newlength{\CheatTextWidth}
+\setlength{\CheatColumnWidth}{5.07cm}
+\setlength{\CheatColumnSep}{0.2cm}
+\setlength{\CheatTextWidth}{\dimexpr 4\CheatColumnWidth + 3\CheatColumnSep\relax}
+\setlength{\textwidth}{\CheatTextWidth}
+\setlength{\columnsep}{\CheatColumnSep}
+\setlength{\columnseprule}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\partopsep}{0pt}
+\pagestyle{empty}
+
+% Typography and colors
+\definecolor{CheatTitleBlue}{HTML}{004D80}
+\definecolor{CheatAccentBlue}{HTML}{0076BA}
+\definecolor{CheatDividerGray}{HTML}{808080}
+
+\makeatletter
+\renewcommand\normalsize{%
+  \@setfontsize\normalsize{5pt}{6pt}%
+  \abovedisplayskip 1pt plus 0.5pt minus 0.5pt%
+  \belowdisplayskip 1pt plus 0.5pt minus 0.5pt%
+  \abovedisplayshortskip 0.5pt plus 0.5pt%
+  \belowdisplayshortskip 0.5pt plus 0.5pt%
+}
+\makeatother
+\normalsize
+
+\titleformat{\section}
+  {\color{CheatTitleBlue}\fontsize{7pt}{7.5pt}\selectfont}
+  {}{0pt}{}
+\titleformat{\subsection}
+  {\color{CheatTitleBlue}\fontsize{6pt}{6.5pt}\selectfont\CheatLatinSemiBold\CheatCJKSemiBold}
+  {}{0pt}{}
+\titlespacing*{\section}{0pt}{1.2pt}{0.6pt}
+\titlespacing*{\subsection}{0pt}{0.9pt}{0.4pt}
+\setcounter{secnumdepth}{0}
+
+\setlist[itemize]{
+  leftmargin=0.85em,
+  label={-},
+  labelsep=0.25em,
+  itemsep=0pt,
+  topsep=0pt,
+  parsep=0pt,
+  partopsep=0pt
+}
+\setlist[enumerate]{
+  leftmargin=1.1em,
+  labelsep=0.25em,
+  itemsep=0pt,
+  topsep=0pt,
+  parsep=0pt,
+  partopsep=0pt
+}
+\renewcommand{\arraystretch}{0.95}
+\setlength{\tabcolsep}{1.5pt}
+\allowdisplaybreaks
+\raggedright
+\emergencystretch=0.8em
