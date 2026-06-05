@@ -66,20 +66,11 @@
   PunctStyle=kaiming
 }
 
-% Math font setup
-\DeclareFontFamily{OT1}{CheatMathRoman}{}
-\DeclareFontShape{OT1}{CheatMathRoman}{m}{n}{<-> cmr10}{}
-\DeclareFontFamily{OML}{CheatMathItalic}{\skewchar\font=127}
-\DeclareFontShape{OML}{CheatMathItalic}{m}{it}{<-> cmmi10}{}
-\DeclareFontFamily{OMS}{CheatMathSymbol}{\skewchar\font=48}
-\DeclareFontShape{OMS}{CheatMathSymbol}{m}{n}{<-> cmsy10}{}
-\DeclareFontFamily{OMX}{CheatMathLargeSymbol}{}
-\DeclareFontShape{OMX}{CheatMathLargeSymbol}{m}{n}{<-> cmex10}{}
-
-\SetSymbolFont{operators}{normal}{OT1}{CheatMathRoman}{m}{n}
-\SetSymbolFont{letters}{normal}{OML}{CheatMathItalic}{m}{it}
-\SetSymbolFont{symbols}{normal}{OMS}{CheatMathSymbol}{m}{n}
-\SetSymbolFont{largesymbols}{normal}{OMX}{CheatMathLargeSymbol}{m}{n}
+% Math font and size setup
+\DeclareFontShape{OT1}{cmr}{m}{n}{<-> cmr10}{}
+\DeclareFontShape{OML}{cmm}{m}{it}{<-> cmmi10}{}
+\DeclareFontShape{OMS}{cmsy}{m}{n}{<-> cmsy10}{}
+\DeclareFontShape{OMX}{cmex}{m}{n}{<-> cmex10}{}
 
 \newcommand{\CheatInlineMathSize}{5}
 \newcommand{\CheatInlineMathScriptSize}{4.2}
