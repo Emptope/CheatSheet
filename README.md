@@ -1,6 +1,6 @@
 # CheatSheet Template
 
-基于 [Milvoid/CheatingSheetTemplate](https://github.com/Milvoid/CheatingSheetTemplate) 修改的 A4 竖向四栏 Cheat Sheet 模板。
+基于 [Milvoid/CheatingSheetTemplate](https://github.com/Milvoid/CheatingSheetTemplate) 修改的 A4 竖向四栏 CheatSheet 模板。
 
 > [!IMPORTANT]
 > 字体版权归属 Apple Inc.。根据其用户协议，您仅可在 Apple 平台上使用这些字体，而不应进行分发。
@@ -50,6 +50,7 @@ latexmk -xelatex CheatSheet.tex
 
 - 英文字体：SF Compact Text
 - 中文字体：苹方 简
+- 符号字体：Computer Modern
 
 ### Typography
 
@@ -73,7 +74,7 @@ latexmk -xelatex CheatSheet.tex
 ### Page
 
 - 尺寸：标准竖向 A4
-- 页边空白：左、右、上为 `0.10 cm`；底部为 `0.25 cm`
+- 页边空白：左右为 `0.10 cm`；上下为 `0.20 cm`
 - 四栏布局：每个 Column 为 `5.07 cm`
 - Column 间距：三个栏间距均为 `0.2 cm`
 
