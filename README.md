@@ -1,11 +1,11 @@
-## CheatSheet Template
+# CheatSheet Template
 
 基于 [Milvoid/CheatingSheetTemplate](https://github.com/Milvoid/CheatingSheetTemplate) 修改的 A4 竖向四栏 Cheat Sheet 模板。
 
 > [!IMPORTANT]
 > 字体版权归属 Apple Inc.。根据其用户协议，您仅可在 Apple 平台上使用这些字体，而不应进行分发。
 
-### 文件结构
+## 文件结构
 
 ```text
 .
@@ -17,7 +17,7 @@
 └── fonts/                  # 字体文件
 ```
 
-### 快速上手
+## 快速上手
 
 该模板必须使用 **XeLaTeX** 编译，不能使用 pdfLaTeX 编译。
 
@@ -27,23 +27,24 @@
 xelatex CheatSheet.tex
 ```
 
-如需自动处理多次编译，可使用 `latexmk`：
+如需自动处理多次编译，可使用 `latexmk` ：
 
 ```sh
 latexmk -xelatex CheatSheet.tex
 ```
 
-编译需求：
+### 编译需求
 
 - 已安装 TeX Live、MacTeX 或其他包含 XeLaTeX 的 LaTeX 发行版。
-- `fonts/` 目录存在，并包含 `SFCompactText-*.ttf` 与 `PingFangSC-*.ttf` 字体文件。字体必须放在此文件夹内。
-- 编译命令在仓库根目录执行，否则相对路径 `config/`、`fig/`、`fonts/` 可能无法正确解析。
+- `fonts/` 目录存在，并包含 `SFCompactText-*.ttf` 与 `PingFangSC-*.ttf` 字体文件；字体必须放在此文件夹内。
 
-修改内容：
+### 制作规范
 
 - 主要内容写在 `CheatSheet.tex` 的 `cheatsheet` 环境内。
-- 页面尺寸、栏宽、栏距、字号、颜色等样式集中在 `config/style.tex`。
-- 常用命令放在 `config/commands.tex`。
+- 页面尺寸、栏宽、栏距、字号、颜色等样式集中在 `config/style.tex` 中。
+- 自定义命令放在 `config/commands.tex` 中。
+
+## 设计样式
 
 ### Font
 
