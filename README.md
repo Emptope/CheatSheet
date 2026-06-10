@@ -44,6 +44,10 @@ latexmk -xelatex CheatSheet.tex
 - 页面尺寸、栏宽、栏距、字号、颜色等样式集中在 `config/style.tex` 中。
 - 自定义命令放在 `config/commands.tex` 中。
 
+## 效果预览
+
+![[Preview.png]]
+
 ## 设计样式
 
 ### Font
