@@ -46,7 +46,7 @@ latexmk -xelatex CheatSheet.tex
 
 ## 效果预览
 
-![[Preview.png]]
+![Preview](./Preview.png)
 
 ## 设计样式
 
