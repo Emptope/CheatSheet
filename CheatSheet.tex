@@ -1,6 +1,6 @@
 % !TEX program = xelatex
 % This xelatex template is made by Milvoid
-% ALL THE CONTENTS ARE MADE BY Tuo Yao (Emptope)
+% And edited by Tuo Yao (Emptope), Xiran Wang (vesperale1112)
 % Copyleft 2026 Tuo Yao (Emptope), All wrongs reversed.
 
 \documentclass[a4paper]{article}
@@ -51,6 +51,44 @@
 \vspace{0.5em}
 
 \divider
+
+\subsection{表格示例}
+
+\begingroup
+\fontsize{4pt}{4.8pt}\selectfont
+\setlength{\tabcolsep}{0.9pt}
+\renewcommand{\arraystretch}{1.08}
+\begin{tabularx}{\linewidth}{
+  >{\raggedright\arraybackslash}p{0.31\linewidth}
+  >{\raggedright\arraybackslash}X
+  >{\raggedright\arraybackslash}X
+}
+\toprule
+\term{检验类型} & \term{备择假设} & \term{临界值($\alpha=0.05$)} \\
+\midrule
+
+Right-tailed $t$ test
+& $H_1:\beta>0$
+& $t_{0.95,\;df}$ \\
+\rowline
+
+Left-tailed $t$ test
+& $H_1:\beta<0$
+& $t_{0.05,\;df}$ \\
+\rowline
+
+Two-sided $t$ test
+& $H_1:\beta\neq 0$
+& $\pm t_{0.975,\;df}$ \\
+\rowline
+
+$F$ test
+& usually right-tailed
+& $F_{0.95,\;df_1,\;df_2}$ \\
+
+\bottomrule
+\end{tabularx}
+\endgroup
 
 以下是一段示例文本
 
